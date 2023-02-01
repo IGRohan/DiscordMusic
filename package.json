@@ -1,0 +1,33 @@
+{
+  "name": "discordmusic",
+  "version": "1.0.0",
+  "description": "A discord music bot written in javascript using discord.js v14.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IGRohan/DiscordMusic.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "IGRohan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IGRohan/DiscordMusic/issues"
+  },
+  "homepage": "https://github.com/IGRohan/DiscordMusic#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "erela.js": "^2.4.0",
+    "pretty-ms": "^8.0.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
