@@ -2,9 +2,9 @@ import { SlashCommandBuilder, ChatInputCommandInteraction } from 'discord.js';
 
 export default {
     data: new SlashCommandBuilder()
-        .setName('skip')
-        .setDescription('Skip to the next song'),
-    name: 'skip',
+        .setName('loop')
+        .setDescription("Sets the currently playing song on loop"),
+    name: 'loop',
     /**
      * 
      * @param {ChatInputCommandInteraction} interaction 
@@ -17,7 +17,12 @@ export default {
             return interaction.reply({ content: '**You need to be in the same voice channel as me.**', ephemeral: true })
         };
 
-        await player.stop();
-        return interaction.reply({ content: 'Skipped' })
+        if (player.trackRepeat) {
+            player.setTrackRepeat(false);
+            return await interaction.reply({ content: `Song loop has been disabled.` })
+        } else {
+            player.setTrackRepeat(true);
+            return await interaction.reply({ content: `Song loop has been enabled.` })
+        }
     }
 }
